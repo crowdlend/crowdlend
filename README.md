@@ -1,5 +1,7 @@
 # Angular-Truffle
 
+[![Build Status](https://travis-ci.org/crowdlend/crowdlend.svg?branch=master)](https://travis-ci.org/crowdlend/crowdlend)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 An angular4 + [truffle](https://github.com/trufflesuite/truffle) starter app. Write, compile & deploy smart contracts for Ethereum.
