@@ -6,19 +6,21 @@ node_js:
 
 addons:
   chrome: stable
-apt:
-  packages:
-    - testrpc
 
 before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - testrpc
+
+
+install:
+- npm install -g @angular/cli
+- npm install -g ethereumjs-testrpc
+- npm install -g truffle
+- npm install
 
 before_script:
-- npm install -g @angular/cli
-- npm install
-- ng build
+- testrpc &
 
 script:
+- ng build
 - ng e2e
