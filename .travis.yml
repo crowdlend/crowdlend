@@ -22,6 +22,8 @@ before_script:
 - testrpc &
 
 script:
+- truffle compile
+- truffle migrate
 - ng build
 - ng test --watch false
 - ng e2e
