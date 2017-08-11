@@ -1,0 +1,29 @@
+dist: trusty
+language: node_js
+sudo: required
+node_js:
+  - '8.3.0'
+
+addons:
+  chrome: stable
+
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+
+install:
+- npm install -g @angular/cli
+- npm install -g ethereumjs-testrpc
+- npm install -g truffle
+- npm install
+
+before_script:
+- testrpc &
+
+script:
+- truffle compile
+- truffle migrate
+- ng build
+- ng test --watch false
+- ng e2e
