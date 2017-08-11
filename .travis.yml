@@ -23,4 +23,5 @@ before_script:
 
 script:
 - ng build
+- ng test
 - ng e2e
