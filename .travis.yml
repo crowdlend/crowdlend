@@ -23,4 +23,6 @@ before_script:
 - npm install
 - ng build
 
-script: testrpc ; ng e2e
+script:
+- testrpc
+- ng e2e
