@@ -24,6 +24,7 @@ before_script:
 script:
 - truffle compile
 - truffle migrate
+- truffle test
 - ng build
 - ng test --watch false
 - ng e2e
