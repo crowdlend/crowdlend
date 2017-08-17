@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import {CrowdLendService} from './crowd-lend.service';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent
   ],
-  providers: [],
+  providers: [CrowdLendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
