@@ -1,5 +1,5 @@
 {
-  "name": "angular-truffle",
+  "name": "crowdlend",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,7 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "truffle-compile": "truffle compile",
+    "truffle-test": "truffle test",
+    "truffle-migrate": "truffle migrate"
   },
   "private": true,
   "dependencies": {
