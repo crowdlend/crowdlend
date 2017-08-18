@@ -4,6 +4,7 @@
       <h1 class="title is-1">
         CrowdLend
       </h1>
+      <h2>{{account | async}}</h2>
     </div>
   </div>
 </section>
@@ -12,8 +13,5 @@
     <h1 class="title">Accounts</h1>
     <h1 class="title is-4 is-info help">{{status}}</h1>
 
-    <ul>
-      <li *ngFor="let acc of accounts| async">{{acc}}</li>
-    </ul>
   </div>
 </section>

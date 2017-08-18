@@ -1,5 +1,4 @@
-import {Component, HostListener, NgZone} from '@angular/core';
-import {canBeNumber} from '../util/validation';
+import {Component, AfterViewChecked} from '@angular/core';
 import {CrowdLendService} from './crowd-lend.service';
 import {Observable} from 'rxjs/Observable';
 
@@ -10,16 +9,11 @@ import {Observable} from 'rxjs/Observable';
 })
 export class AppComponent {
 
-  account: String;
-  accounts: Observable<String[]>;
-
-  balance: number;
-  sendingAmount: number;
-  recipientAddress: string;
+  account: Observable<String>;
   status: string;
-  canBeNumber = canBeNumber;
 
-  constructor(private _ngZone: NgZone, private _crowdLend: CrowdLendService) {
-    this.accounts = this._crowdLend.accounts;
+  constructor(private _crowdLend: CrowdLendService) {
+    this.account = this._crowdLend.unlockedAccount;
   }
+
 }

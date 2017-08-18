@@ -1,11 +1,13 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import {TestBed, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {FormsModule} from '@angular/forms';
+import {CrowdLendService} from './crowd-lend.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule ],
+      imports: [FormsModule],
+      providers: [CrowdLendService],
       declarations: [
         AppComponent
       ],
