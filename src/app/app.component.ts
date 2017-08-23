@@ -1,19 +1,21 @@
-import {Component, AfterViewChecked} from '@angular/core';
+import {Component, ChangeDetectorRef, OnInit} from '@angular/core';
 import {CrowdLendService} from './crowd-lend.service';
-import {Observable} from 'rxjs/Observable';
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-
-  account: Observable<String>;
-  status: string;
+export class AppComponent implements OnInit {
+  account: string;
 
   constructor(private _crowdLend: CrowdLendService) {
-    this.account = this._crowdLend.unlockedAccount;
+  }
+
+  ngOnInit() {
+    this._crowdLend.defaultAccount.subscribe((next) => {
+      this.account = next
+    });
+    this._crowdLend.init();
   }
 
 }
